@@ -29,3 +29,5 @@ Command line Aplication que simplifica a atualização do ícone do app
 
 - [Flutter Provider](https://pub.dev/packages/provider)
 wrapper em cima do InheritedWidget que facilitou a arquitetura do app
+
+- [Flutter File Picker](https://pub.dev/packages/file_picker) Código razoavélmente entendível, funciona mas não foi encontrado testes automatizados...
