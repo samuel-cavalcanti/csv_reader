@@ -1,5 +1,7 @@
 # <img src="csv_reader_icon.png" alt="exemple gif" width="50" />   CSV Reader
 
+[![Build Status](https://travis-ci.com/samuel-cavalcanti/csv_reader.svg?branch=main)](https://travis-ci.com/samuel-cavalcanti/csv_reader)
+[![codecov](https://codecov.io/gh/samuel-cavalcanti/csv_reader/branch/main/graph/badge.svg?token=Y6NVA8K14K)](https://codecov.io/gh/samuel-cavalcanti/csv_reader)
 
 Aplicativo Android para __APENAS__ visualizar arquivos Comma-Separated-Values (CSV).
 Esse aplicativo foi criado com duas finalidades
