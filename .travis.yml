@@ -1,6 +1,9 @@
 os:
   - linux
 sudo: false
+env:
+  global:
+    -CODECOV_TOKEN="99f49d3a-e11e-495b-8231-505a95063a44"
 addons:
   apt:
     # Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
@@ -14,6 +17,8 @@ before_script:
   - ./flutter/bin/flutter doctor
 script:
   - ./flutter/bin/flutter test
+after_success:
+  -bash <(curl -s https://codecov.io/bash)
 cache:
   directories:
     - $HOME/.pub-cache

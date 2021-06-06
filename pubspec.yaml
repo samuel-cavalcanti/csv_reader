@@ -34,12 +34,14 @@ dependencies:
 dev_dependencies:
   flutter_launcher_icons: ^0.9.0
 
+  flutter_test:
+    sdk: flutter
+
 flutter_icons:
   android: "launcher_icon"
   image_path: "csv_reader_icon.png"
 
-  flutter_test:
-    sdk: flutter
+
 
 
 
