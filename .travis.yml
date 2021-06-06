@@ -17,7 +17,7 @@ before_script:
 script:
   - ./flutter/bin/flutter test
 after_success:
-  -bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info || echo "Codecov did not collect coverage reports"
 cache:
   directories:
     - $HOME/.pub-cache
