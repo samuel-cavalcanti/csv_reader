@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     controller.addListener(() {
       if (controller.status == FilePathProviderControllerStatus.picked)
         Navigator.of(context)
-            .pushReplacementNamed(Routes.table, arguments: controller.filePath);
+            .pushNamed(Routes.table, arguments: controller.filePath);
     });
   }
 
