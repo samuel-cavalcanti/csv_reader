@@ -23,43 +23,20 @@ class _TablePageState extends State<TablePage> {
 
   @override
   Widget build(BuildContext context) {
-    final arguments  = ModalRoute.of(context)!.settings.arguments as String;
+    final arguments = ModalRoute.of(context)!.settings.arguments as String;
     final controller = context.read<SimpleCsvFileController>();
 
     controller.loadCsvFile(arguments);
 
-    // _loadCsvFile();
+    final title =
+        controller.fileName == null ? 'CSV Reader' : controller.fileName!;
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: DataTableTitle(),
+        title: Text(title),
       ),
       body: CsvDataTable(),
     );
-  }
-
-  Future<void> _loadCsvFile() async {
-    final controller = context.read<SimpleCsvFileController>();
-
-    controller.addListener(() {
-      print(controller.status);
-    });
-
-
-  }
-}
-
-class DataTableTitle extends StatelessWidget {
-  const DataTableTitle({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final controller = context.watch<SimpleCsvFileController>();
-
-    final title =
-        controller.fileName == null ? 'CSV Reader' : controller.fileName!;
-
-    return Text(title);
   }
 }

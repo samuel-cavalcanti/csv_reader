@@ -10,10 +10,6 @@ class CsvDataTable extends StatelessWidget {
     final CsvFileController controller =
         context.watch<SimpleCsvFileController>();
 
-
-
-    // if (arguments != null) controller.loadCsvFile(arguments as String);
-
     if (controller.status == CsvFileLoadStatus.loading)
       return Center(
           child: CircularProgressIndicator(
