@@ -8,7 +8,7 @@ class AndroidIntent extends PathFileProvider {
   Future<String?> getPathFile() async {
     try {
       return await _channel.invokeMethod('getFilePath');
-    } on PlatformException catch (e) {
+    } on PlatformException {
       return null;
     }
   }
