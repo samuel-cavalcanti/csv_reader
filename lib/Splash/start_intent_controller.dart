@@ -1,10 +1,11 @@
-import 'package:csv_reader/core/FilePathProviderController.dart';
-import 'package:csv_reader/core/PathFileProvider.dart';
+import 'package:csv_reader/core/file_path_provider_controller.dart';
+import 'package:csv_reader/core/path_file_provider.dart';
 import 'package:flutter/foundation.dart';
 
 class StartIntentController extends ChangeNotifier
     implements FilePathProviderController {
-
+      
+  @override
   FilePathProviderControllerStatus status =
       FilePathProviderControllerStatus.picking;
   String? _filePath;
@@ -17,10 +18,10 @@ class StartIntentController extends ChangeNotifier
   @override
   Future<void> callProvider() async {
     _filePath = await provider.getPathFile();
-    if (filePath == null)
-      status = FilePathProviderControllerStatus.idle;
-    else
-      status = FilePathProviderControllerStatus.picked;
+    status = filePath == null
+        ? FilePathProviderControllerStatus.idle
+        : FilePathProviderControllerStatus.picked;
+
     notifyListeners();
   }
 

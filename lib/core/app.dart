@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CSV Reader',
       // themeMode: ThemeMode.dark,
-      theme: ThemeData(primaryColor: Color(0xff1b5e20)),
+      theme: ThemeData(primaryColor: const Color(0xff1b5e20)),
       debugShowCheckedModeBanner: false,
       home: Routes.buildSplashPage(),
       routes: Routes.buildRoutes(),

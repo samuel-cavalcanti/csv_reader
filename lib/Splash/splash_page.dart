@@ -1,5 +1,5 @@
-import 'package:csv_reader/Splash/StartIntentController.dart';
-import 'package:csv_reader/core/FilePathProviderController.dart';
+import 'package:csv_reader/Splash/start_intent_controller.dart';
+import 'package:csv_reader/core/file_path_provider_controller.dart';
 import 'package:csv_reader/core/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

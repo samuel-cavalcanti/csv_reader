@@ -1,8 +1,8 @@
-import 'package:csv_reader/core/FilePathProviderController.dart';
-import 'package:csv_reader/home/CsvFilePathPickerController.dart';
+import 'package:csv_reader/core/file_path_provider_controller.dart';
+import 'package:csv_reader/home/csv_file_path_picker_controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../mocks/MockPathFileProvider.dart';
+import '../mocks/mock_path_file_provider.dart';
 
 void main() {
   group('CsvFilePathPickerController', () {

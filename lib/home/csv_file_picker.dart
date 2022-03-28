@@ -1,4 +1,4 @@
-import 'package:csv_reader/core/PathFileProvider.dart';
+import 'package:csv_reader/core/path_file_provider.dart';
 import 'package:file_picker/file_picker.dart';
 
 class CsvFilePicker implements PathFileProvider {

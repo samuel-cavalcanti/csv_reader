@@ -1,10 +1,10 @@
-import 'package:csv_reader/Splash/AndroidIntent.dart';
-import 'package:csv_reader/Splash/Splash_page.dart';
-import 'package:csv_reader/Splash/StartIntentController.dart';
-import 'package:csv_reader/home/CsvFilePathPickerController.dart';
-import 'package:csv_reader/home/CsvFilePicker.dart';
+import 'package:csv_reader/Splash/android_intent.dart';
+import 'package:csv_reader/Splash/splash_page.dart';
+import 'package:csv_reader/Splash/start_intent_controller.dart';
+import 'package:csv_reader/home/csv_file_path_picker_controller.dart';
+import 'package:csv_reader/home/csv_file_picker.dart';
 import 'package:csv_reader/home/home_page.dart';
-import 'package:csv_reader/table/SimpleCsvFileController.dart';
+import 'package:csv_reader/table/simple_csv_file_controller.dart';
 import 'package:csv_reader/table/table_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +26,7 @@ class Routes {
     return ChangeNotifierProvider(
       create: (BuildContext context) =>
           CsvFilePathPickerController(CsvFilePicker()),
-      child: HomePage(),
+      child: const HomePage(),
     );
   }
 
@@ -34,14 +34,14 @@ class Routes {
     return ChangeNotifierProvider(
       create: (BuildContext context) => StartIntentController(AndroidIntent()),
 
-      child: SplashPage(),
+      child: const SplashPage(),
     );
   }
 
   static Widget buildTablePage() {
     return ChangeNotifierProvider(
-      create: (BuildContext context) => SimpleCsvFileController(),
-      child: TablePage(),
+      create: (BuildContext context) =>  SimpleCsvFileController(),
+      child: const TablePage(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import '../core/CsvFile.dart';
+import '../core/csv_file.dart';
 
 class SimpleCsvFile extends CsvFile {
   final String _filePath;
@@ -13,9 +13,10 @@ class SimpleCsvFile extends CsvFile {
   bool _loaded = false;
 
   SimpleCsvFile(this._filePath) {
-    this._fileName = _filePath.split('/').last;
+    _fileName = _filePath.split('/').last;
   }
 
+  @override
   Future<List<String>> get headers async {
     if (_loaded) return _headers;
 
@@ -24,6 +25,7 @@ class SimpleCsvFile extends CsvFile {
     return _headers;
   }
 
+  @override
   Future<List<List<String>>> get table async {
     if (_loaded) return _table;
 
@@ -32,12 +34,15 @@ class SimpleCsvFile extends CsvFile {
     return _table;
   }
 
-  String get fileName => this._fileName;
+  @override
+  String get fileName => _fileName;
 
+  @override
   String get path => _filePath;
 
+  @override
   Future<void> read() async {
-    final csvFile = File(this._filePath);
+    final csvFile = File(_filePath);
 
     _content = await csvFile.readAsString();
     _loaded = true;

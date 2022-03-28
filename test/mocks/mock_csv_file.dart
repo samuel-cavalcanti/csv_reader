@@ -1,4 +1,4 @@
-import 'package:csv_reader/core/CsvFile.dart';
+import 'package:csv_reader/core/csv_file.dart';
 
 class MockCsvFile extends CsvFile {
   @override
@@ -14,7 +14,7 @@ class MockCsvFile extends CsvFile {
 
   @override
   Future<void> read() async {
-    Future.delayed(Duration(microseconds: 10));
+    Future.delayed(const Duration(microseconds: 10));
   }
 
   @override

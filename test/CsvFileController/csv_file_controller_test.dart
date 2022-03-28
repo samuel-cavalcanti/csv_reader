@@ -1,8 +1,8 @@
-import 'package:csv_reader/core/CsvFileController.dart';
-import 'package:csv_reader/table/SimpleCsvFileController.dart';
+import 'package:csv_reader/core/csv_file_controller.dart';
+import 'package:csv_reader/table/simple_csv_file_controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../mocks/MockCsvFile.dart';
+import '../mocks/mock_csv_file.dart';
 
 void main() {
   group('CsvFileController', () {

@@ -1,8 +1,8 @@
-import 'package:csv_reader/core/CsvFile.dart';
-import 'package:csv_reader/core/CsvFileController.dart';
+import 'package:csv_reader/core/csv_file.dart';
+import 'package:csv_reader/core/csv_file_controller.dart';
 import 'package:flutter/material.dart';
 
-import 'SimpleCsvFile.dart';
+import 'simple_csv_file.dart';
 
 class SimpleCsvFileController extends ChangeNotifier
     implements CsvFileController {
@@ -25,6 +25,7 @@ class SimpleCsvFileController extends ChangeNotifier
   @override
   List<List<String>>? get table => _table;
 
+  @override
   Future<void> loadCsvFile(String filePath) async {
     _loadStatus = CsvFileLoadStatus.loading;
     try {
@@ -36,7 +37,6 @@ class SimpleCsvFileController extends ChangeNotifier
 
     notifyListeners();
   }
-
 
   Future<void> _tryToLoadFile(String filePath) async {
     _csvFile = SimpleCsvFile(filePath);

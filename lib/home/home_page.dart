@@ -1,10 +1,10 @@
 import 'package:csv_reader/core/routes.dart';
-import 'package:csv_reader/home/FilePickerButton.dart';
+import 'package:csv_reader/home/file_picker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'CsvFilePathPickerController.dart';
-import '../core/FilePathProviderController.dart';
+import 'csv_file_path_picker_controller.dart';
+import '../core/file_path_provider_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,9 +21,10 @@ class _HomePageState extends State<HomePage> {
     final CsvFilePathPickerController controller = context.read();
 
     controller.addListener(() {
-      if (controller.status == FilePathProviderControllerStatus.picked)
+      if (controller.status == FilePathProviderControllerStatus.picked) {
         Navigator.of(context)
             .pushNamed(Routes.table, arguments: controller.filePath);
+      }
     });
   }
 
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'CSV Reader',
                 style: TextStyle(fontSize: 24),

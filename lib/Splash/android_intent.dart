@@ -1,4 +1,4 @@
-import 'package:csv_reader/core/PathFileProvider.dart';
+import 'package:csv_reader/core/path_file_provider.dart';
 import 'package:flutter/services.dart';
 
 class AndroidIntent extends PathFileProvider {
