@@ -12,12 +12,9 @@ class TablePage extends StatefulWidget {
 }
 
 class _TablePageState extends State<TablePage> {
-
   @override
   void initState() {
     super.initState();
-
-  
   }
 
   @override
@@ -48,11 +45,9 @@ class _TablePageState extends State<TablePage> {
         ));
 
       case CsvFileLoadStatus.success:
-        return ls
-        const CsvDataTable();
+        return const CsvDataTable();
 
       case CsvFileLoadStatus.fail:
-       
         return Container(
           child: const Center(
             child: Text('Fail'),
