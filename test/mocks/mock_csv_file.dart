@@ -1,6 +1,6 @@
 import 'package:csv_reader/core/csv_file.dart';
 
-class MockCsvFile extends CsvFile {
+class MockSample0CsvFile extends CsvFile {
   @override
   get fileName => 'sample0.csv';
 

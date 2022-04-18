@@ -6,7 +6,7 @@ import '../mocks/mock_csv_file.dart';
 
 void main() {
   group('CsvFileController', () {
-    final mock = MockCsvFile();
+    final mock = MockSample0CsvFile();
 
     test('loading file state', () async {
       final csvFileController = SimpleCsvFileController();
