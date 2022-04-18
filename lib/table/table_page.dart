@@ -21,20 +21,22 @@ class _TablePageState extends State<TablePage> {
   Widget build(BuildContext context) {
     final csvFilePath = ModalRoute.of(context)!.settings.arguments as String;
     final controller = context.read<SimpleCsvFileController>();
-
-    final title = controller.fileName ?? 'CSV Reader';
+    final futureCsvFile = controller.loadCsvFile(csvFilePath);
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
-        title: Text(title),
+        title: FutureBuilder(
+          future: futureCsvFile,
+          builder: _titleBuilder,
+        ),
       ),
-      body: FutureBuilder(
-          builder: _builder, future: controller.loadCsvFile(csvFilePath)),
+      body: FutureBuilder(builder: _bodyBuilder, future: futureCsvFile),
     );
   }
 
-  Widget _builder(BuildContext context, AsyncSnapshot<void> snapshot) {
+  Widget _bodyBuilder(BuildContext context, AsyncSnapshot<void> snapshot) {
     final controller = context.read<SimpleCsvFileController>();
 
     switch (controller.status) {
@@ -61,6 +63,20 @@ class _TablePageState extends State<TablePage> {
             child: const Center(
               child: Text('Idle'),
             ));
+    }
+  }
+
+  Widget _titleBuilder(BuildContext context, AsyncSnapshot<void> snapshot) {
+    final controller = context.read<SimpleCsvFileController>();
+    const csvReaderText = Text('CSV Reader');
+    switch (controller.status) {
+      case CsvFileLoadStatus.success:
+        return controller.fileName == null
+            ? csvReaderText
+            : Text(controller.fileName!);
+
+      default:
+        return csvReaderText;
     }
   }
 }
