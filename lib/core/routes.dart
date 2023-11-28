@@ -33,14 +33,13 @@ class Routes {
   static Widget buildSplashPage() {
     return ChangeNotifierProvider(
       create: (BuildContext context) => StartIntentController(AndroidIntent()),
-
       child: const SplashPage(),
     );
   }
 
   static Widget buildTablePage() {
     return ChangeNotifierProvider(
-      create: (BuildContext context) =>  SimpleCsvFileController(),
+      create: (BuildContext context) => SimpleCsvFileController(),
       child: const TablePage(),
     );
   }
